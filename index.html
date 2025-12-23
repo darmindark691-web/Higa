@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Global Intelligence Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>🌐 Global Intelligence</h1>
+  <p>News • Education • Research</p>
+</header>
+
+<nav id="country-tabs">
+  <button onclick="loadCountry('india')">🇮🇳 India</button>
+  <button onclick="loadCountry('china')">🇨🇳 China</button>
+  <button onclick="loadCountry('japan')">🇯🇵 Japan</button>
+  <button onclick="loadCountry('usa')">🇺🇸 USA</button>
+  <button onclick="loadCountry('uk')">🇬🇧 UK</button>
+</nav>
+
+<main>
+  <section>
+    <h2>🔥 Top News</h2>
+    <div id="top" class="grid"></div>
+  </section>
+
+  <section>
+    <h2>💼 Business</h2>
+    <div id="business" class="grid"></div>
+  </section>
+
+  <section>
+    <h2>💻 Technology</h2>
+    <div id="technology" class="grid"></div>
+  </section>
+
+  <section>
+    <h2>🎓 Education & Research</h2>
+    <div id="education" class="grid"></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
