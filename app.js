@@ -1,5 +1,5 @@
 // 🔗 CHANGE THIS TO YOUR WORKER URL
-const NEWS_API = "aimemory.darmindark691.workers.devcountry=";
+const NEWS_API = "aimemory.darmindark691.workers.dev/country=";
 
 // 🎓 OpenAlex (Education Hub – unlimited feel)
 const OPENALEX_API =
