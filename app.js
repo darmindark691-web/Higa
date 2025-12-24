@@ -6,7 +6,8 @@ const countries = {
 async function loadEducation(country) {
   const code = countries[country];
   const url =
-    `https://api.openalex.org/works?filter=institutions.country_code:${code}&per-page=10`;
+    `https://api.openalex.org/works?filter=institutions.country_code:${code}&per-page=40
+    `;
 
   const res = await fetch(url);
   const data = await res.json();
