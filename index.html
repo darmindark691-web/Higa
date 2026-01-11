@@ -14,7 +14,7 @@ async function loadPMCPDFs() {
   // Step 1: Search PMC
   const searchUrl =
     "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi" +
-    "?db=pmc&term=physics&retmax=10&retmode=json";
+    "?db=pmc&term=physics&retmax=50&retmode=json";
 
   const searchRes = await fetch(searchUrl);
   const searchData = await searchRes.json();
