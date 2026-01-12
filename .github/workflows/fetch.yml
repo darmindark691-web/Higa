@@ -1,0 +1,36 @@
+name: India Live Current Affairs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"   # हर 6 घंटे
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install tools
+        run: sudo apt-get install -y xmlstarlet
+
+      - name: Fetch PIB RSS
+        run: |
+          curl -s https://pib.gov.in/rss.aspx > pib.xml
+
+      - name: Convert RSS to JSON
+        run: |
+          echo "[" > data.json
+          xmlstarlet sel -t -m "//item" \
+            -v "concat('{\"title\":\"', title, '\",\"link\":\"', link, '\",\"source\":\"PIB\"},')" \
+            pib.xml >> data.json
+          echo "]" >> data.json
+
+      - name: Commit
+        run: |
+          git config user.name "engine-bot"
+          git config user.email "bot@github.com"
+          git add data.json
+          git commit -m "Auto update PIB live data" || echo "No change"
+          git push
