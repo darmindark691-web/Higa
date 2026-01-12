@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "hub": "PIB",
+    "title": "Cabinet approves new education policy",
+    "link": "https://pib.gov.in"
+  },
+  {
+    "hub": "RBI",
+    "title": "RBI keeps repo rate unchanged",
+    "link": "https://rbi.org.in"
+  },
+  {
+    "hub": "Election Commission of India",
+    "title": "ECI announces election schedule",
+    "link": "https://eci.gov.in"
+  }
+]
