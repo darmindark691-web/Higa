@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Current Affairs (Auto)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+      margin: 0;
+      padding: 15px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .hub {
+      font-size: 12px;
+      color: #666;
+    }
+    .title {
+      font-weight: bold;
+      margin: 6px 0;
+    }
+    a {
+      color: #0b5ed7;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>India Current Affairs (Auto)</h1>
+<div id="content">Loading data...</div>
+
+<script>
+fetch("./data.json")
+  .then(res => {
+    if (!res.ok) throw new Error("data.json not found");
+    return res.json();
+  })
+  .then(data => {
+    const box = document.getElementById("content");
+    box.innerHTML = "";
+
+    data.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div class="hub">${item.hub}</div>
+        <div class="title">${item.title}</div>
+        <a href="${item.link}" target="_blank">Read Source</a>
+      `;
+      box.appendChild(div);
+    });
+  })
+  .catch(err => {
+    document.getElementById("content").innerText =
+      "Data load error: " + err.message;
+  });
+</script>
+
+</body>
+</html>
