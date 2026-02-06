@@ -1,9 +1,0 @@
-{
-  "name": "india-current-affairs-engine",
-  "version": "1.0.0",
-  "type": "commonjs",
-  "dependencies": {
-    "node-fetch": "^2.6.9",
-    "xml2js": "^0.4.23"
-  }
-}
